@@ -56,7 +56,6 @@ var content1 = '<div class="wrap">' +
             '    <div class="info">' + 
             '        <div class="title">' + 
             '            글램핑클럽레스피아-홍천' + 
-            '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' + 
             '        </div>' + 
             '        <div class="body">' + 
             '            <div class="img">' +
@@ -74,8 +73,7 @@ var content1 = '<div class="wrap">' +
 var content2 = '<div class="wrap">' + 
             '    <div class="info">' + 
             '        <div class="title">' + 
-            '            와이글램핑-양평' + 
-            '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' + 
+            '            와이글램핑-양평' +
             '        </div>' + 
             '        <div class="body">' + 
             '            <div class="img">' +
@@ -93,8 +91,7 @@ var content2 = '<div class="wrap">' +
 var content3 = '<div class="wrap">' + 
             '    <div class="info">' + 
             '        <div class="title">' + 
-            '            양지파인글램핑-용인' + 
-            '            <div id="closeBtn" class="close" onclick="closeOverlay()" title="닫기"></div>' + 
+            '            양지파인글램핑-용인' +
             '        </div>' + 
             '        <div class="body">' + 
             '            <div class="img">' +
@@ -112,8 +109,7 @@ var content3 = '<div class="wrap">' +
 var content4 = '<div class="wrap">' + 
             '    <div class="info">' + 
             '        <div class="title">' + 
-            '            힐포인트-용인' + 
-            '            <div class="close" onclick="closeOverlay(overlay)" title="닫기"></div>' + 
+            '            힐포인트-용인' +
             '        </div>' + 
             '        <div class="body">' + 
             '            <div class="img">' +
@@ -130,7 +126,6 @@ var content4 = '<div class="wrap">' +
 
 var contents = [content1, content2, content3, content4];
 
-
 for(var i = 0; i<positions.length;++i ){
     // 지도에 마커를 표시합니다 
     var marker = new kakao.maps.Marker({
@@ -144,19 +139,6 @@ for(var i = 0; i<positions.length;++i ){
     position: marker.getPosition()       
     });
 
-    // 마커를 클릭했을 때 커스텀 오버레이를 표시합니다
-    kakao.maps.event.addListener(marker, 'click', function() {        
-        overlay.setMap(map);
-    });
-
-    
-}
-
-function closeOverlay(overlay) {
-    if (overlay instanceof kakao.maps.CustomOverlay){
-        console.log("d");
-        overlay.setMap(null);
-    }
 }
 </script>
 </body>
